@@ -1,0 +1,17 @@
+{
+  "name": "dashboard-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0"
+  },
+  "cubejsTemplates": {
+    "create-react-app": "0.0.1",
+    "react-antd-dynamic": "0.0.1",
+    "credentials": "0.0.1",
+    "recharts-charts": "0.0.1",
+    "antd-tables": "0.0.1"
+  }
+}
