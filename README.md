@@ -15,6 +15,11 @@ This repo consists of the sample works of Cubejs framework for learning
 
 Cube.js has necessary infrastructure for every analytic application that heavily relies on its caching and pre-aggregation layer to provide several minutes raw data to insight delay and sub second API response times on a trillion of data points scale.
 
+![alt text][Cubejs.png]
+
+## Architecture
+![alt text][Cubejs-archi.png]
+
 ## Cubejs Query Formats
 
 * Measures - It gives the measuare like count of the dimensions.
