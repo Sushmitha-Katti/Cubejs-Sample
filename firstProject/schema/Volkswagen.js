@@ -8,7 +8,17 @@ cube(`Volkswagen`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [id, createdat, city, screenname, country, date]
+      drillMembers: [id, city, screenname, country, date, createdat]
+    },
+    
+    favcount: {
+      sql: `favcount`,
+      type: `sum`
+    },
+    
+    retweetcount: {
+      sql: `retweetcount`,
+      type: `sum`
     }
   },
   
@@ -39,11 +49,6 @@ cube(`Volkswagen`, {
       type: `string`
     },
     
-    createdat: {
-      sql: `createdat`,
-      type: `string`
-    },
-    
     hatchback: {
       sql: `hatchback`,
       type: `string`
@@ -56,11 +61,6 @@ cube(`Volkswagen`, {
     
     content: {
       sql: `content`,
-      type: `string`
-    },
-    
-    dislikes: {
-      sql: `dislikes`,
       type: `string`
     },
     
@@ -124,38 +124,13 @@ cube(`Volkswagen`, {
       type: `string`
     },
     
-    favcount: {
-      sql: `favcount`,
-      type: `string`
-    },
-    
-    retweetcount: {
-      sql: `retweetcount`,
-      type: `string`
-    },
-    
     sentiment: {
       sql: `sentiment`,
       type: `string`
     },
     
-    views: {
-      sql: `views`,
-      type: `string`
-    },
-    
     empty: {
       sql: `empty`,
-      type: `string`
-    },
-    
-    shares: {
-      sql: `shares`,
-      type: `string`
-    },
-    
-    likes: {
-      sql: `likes`,
       type: `string`
     },
     
@@ -177,6 +152,11 @@ cube(`Volkswagen`, {
     mynote: {
       sql: `mynote`,
       type: `string`
+    },
+    
+    createdat: {
+      sql: `createdat`,
+      type: `time`
     }
   }
 });
