@@ -25,8 +25,8 @@ Cube.js has necessary infrastructure for every analytic application that heavily
 * Measures - It gives the measuare like count of the dimensions.
 * Dimensions - They are the queriable attributes.
 
-# Application built Using Cubejs
-Buit a dynamic dashboard using cubejs
+# Application built 
+* Buit a dynamic dashboard using cubejs
 * Columns in the database becomes the attributes for the graph
 * Cubejs builds the schema automatically.
 * Extracted the dimension,measures,filters,timedimesion
