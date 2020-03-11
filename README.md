@@ -30,5 +30,5 @@ Buit a dynamic dashboard using cubejs
 * Columns in the database becomes the attributes for the graph
 * Cubejs builds the schema automatically.
 * Extracted the dimension,measures,filters,timedimesion
-* Displayed it dynamically
+* User can choose the charts they want, dimenions, measures, filters, timedimesions
 
