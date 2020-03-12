@@ -32,3 +32,7 @@ Cube.js has necessary infrastructure for every analytic application that heavily
 * Extracted the dimension,measures,filters,timedimesion
 * User can choose the charts they want, dimenions, measures, filters, timedimesions
 
+# Now building
+* The same application converting to vanilla js
+* using parcel bundler
+
