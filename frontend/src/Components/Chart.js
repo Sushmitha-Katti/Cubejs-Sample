@@ -164,23 +164,23 @@ LineChart = (resultSet)=>(
 
    
  render() {
-   const a = "Volkswagen.count";
+  
    
    return (
      <QueryBuilder
      
      query={{
       "dimensions": [
-        "Volkswagen.sentiment",
+        "Tataq.buckets",
         
       ],
       // "timeDimensions": [{
-      //   "dimension": 'Volkswagen.createdat',
+      //   "dimension": 'TataQ.createdat',
       //   "dateRange": ['2020-02-18', '2020-02-24'],
       //   "granularity": 'day'
       // }],
       "measures": [
-       a
+       "Tataq.count"
 
       ],
     
@@ -302,6 +302,20 @@ const handleFilter =(type,i,event) => {
 
 }
 
+//-------------------------------------------------Handle Deselect Filter----------------------------------
+const handledeselectfilter = (i,event) => {
+  console.log('hi')
+  const fil = this.state.filter
+
+ 
+  if(filters.findIndex(e=>e['dimension']['name'] === this.state.filter[i]['dimension']['name'])>=0)
+      updateFilters.remove(this.state.filter[i])
+  fil.splice(i,1)
+  this.setState({filter:fil})
+  
+
+}
+
  //-----------------------------------------------Return-----------------------------------------------------
 
          return (<>
@@ -368,10 +382,10 @@ const handleFilter =(type,i,event) => {
            {availableMeasures.length>0 && availableMeasures.map((measure,i)=> <option key={measure.name} value={measure.title}>
              {measure.title}</option>)}
          </select>
-         {console.log(this.state.filter)}
-         {this.state.filter.length>0 && this.state.filter.map((fil,i) =><><span style={{border:"1px solid black" , marginLeft: "1rem",}}>{fil.dimension.name}</span>
-         <select name = "filteroper" onChange = {(e) =>handleFilter('filoper',i,e)}>{this.Filter.map(fil => <option value= {fil}>{fil}</option>)}</select>
-         <input type="string" placeholder= "insert a string" onChange={(e) =>handleFilter('values',i,e)}></input>
+        
+         {this.state.filter.length>0 && this.state.filter.map((fil,i) =><><span onClick={(e => handledeselectfilter(i,e))} style={{border:"1px solid black" , marginLeft: "1rem",}}>{fil.dimension.name}</span>
+         <select name = "filteroper" value = {this.state.filter[i].operator} onChange = {(e) =>handleFilter('filoper',i,e)}>{this.Filter.map(fil => <option value= {fil}>{fil}</option>)}</select>
+         <input type="string" placeholder= "insert a string" value = {this.state.filter[i].values? this.state.filter[i].values[0]: ""} onChange={(e) =>handleFilter('values',i,e)}></input>
          </> )}
 
 
